@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>推箱子小游戏</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .game {
+            width: 560px;
+            margin: 5px auto;
+        }
+        .button{
+            width: 150px;
+            height: 35px;
+            font-size: 25px;
+            background-color: #95d52f;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+        }
+        #msg {
+            font-size: 30px;
+            width: 100%;
+        }
+
+        @media (max-width: 960px) {
+            .game {
+                width: 100%;
+                margin: auto;
+            }
+
+            #msg {
+                font-size: 30px;
+                width: 100%;
+            }
+
+            .button {
+                width: 150px;
+                height: 35px;
+                font-size: 25px;
+                background-color: #95d52f;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body onkeydown="doKeyDown(event)">
+<div class="game">
+    <canvas id="canvas" width="560px" height="560px"></canvas>
+    <div id="msg"></div>
+    <div class="button" onClick="NextLevel(-1)"><span>上一关</span></div>
+    <div class="button" onClick="NextLevel(1)"><span>下一关</span></div>
+    <div class="button" onClick="NextLevel(0)"><span>重玩本关</span></div>
+    <div class="button" onClick="showHelp()"><span>游戏说明</span></div>
+</div>
+
+<script src="js/levels.js"></script>
+<script src="js/game.js">
+</script>
+
+<div style="text-align:center;clear:both">
+</div>
+</body>
+</html>
